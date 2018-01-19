@@ -9,6 +9,7 @@ Install dependencies and run migrations to set up the app:
 
 - Create a virtualenv
 - Run `sudo sh build-app.sh`
+- Or you can follow the steps in setup.txt
 
 ## Run the app
 
