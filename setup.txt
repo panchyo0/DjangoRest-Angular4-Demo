@@ -1,0 +1,16 @@
+Open terminal Install dependencies:
+sudo pip install Django==1.11.8  
+sudo pip install djangorestframework==3.7.3
+sudo pip install markdown 
+sudo pip install django-filter 
+sudo pip install django-cors-headers==2.1.0
+npm install
+
+
+In terminal under Task1 folder start REST server:
+1. cd backend
+2. python manage.py runserver 
+
+In another terminal under Task1 folder start Angular4 App:
+1. cd WebClient
+2. npm start
