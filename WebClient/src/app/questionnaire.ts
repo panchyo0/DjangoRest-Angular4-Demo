@@ -1,18 +1,17 @@
 //class of questionnaire
 export class Questionnaire {
   constructor(
-    public Age:string,
-    public Address:string,
-    public C_level:string,
-    public Cpp_level:string,
-    public Do_you_like_open_source_software:string,
-    public Email:string,
-    public JavaScript_level:string,
-    public Java_level:string,
-    public Name:string,
-    public Phone_Number:string,
-    public Python_level:string,
-    public Which_computer_language_are_you_prefer:string,
-    public Id:number,
+    public Answer_1:string,
+    public Answer_2:string,
+    public Answer_3:string,
+    public Answer_4:string,
+    public Answer_5:string,
+    public Answer_6:string,
+    public Answer_7:string,
+    public Answer_8:string,
+    public Answer_9:string,
+    public Answer_10:string,
+    public Answer_11:string,
+    public Answer_12:string,
   ){}
 }

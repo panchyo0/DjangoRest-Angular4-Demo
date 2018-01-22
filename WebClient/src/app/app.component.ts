@@ -11,10 +11,10 @@ import {FormGroup,FormControl,Validators} from '@angular/forms';
 export class AppComponent implements OnInit{
   title = 'Questionnaire Programming Language';
   myform:any;
-  questionnaireList:[Questionnaire];
+  questionnaireList:[any];
   levels = ['Junior', 'Middle',
             'Senior', 'Super'];
-  model = new Questionnaire('','','','','','','','','','','','',null);
+  model = new Questionnaire('','','','','','','','','','','','');
   maxa=0;
 
   constructor(private http: HttpClient){
@@ -23,8 +23,8 @@ export class AppComponent implements OnInit{
   // OnInit, pull the questionnaire from server not used
   ngOnInit():void {
   this.http.get('http://127.0.0.1:8000/api/questionnaire/?format=json').subscribe(data=>{
-    // console.log(data);
-    this.questionnaireList=data as [Questionnaire];
+    console.log(data);
+    this.questionnaireList=data as [any];
     },
     (err:HttpErrorResponse)=>{
       if (err.error instanceof Error){
@@ -36,21 +36,20 @@ export class AppComponent implements OnInit{
   ) ;
 
   this.myform=new FormGroup({
-    Age:new FormControl('',Validators.required),
-    Address:new FormControl('',Validators.required),
-    C_level:new FormControl('',Validators.required),
-    Cpp_level:new FormControl('',Validators.required),
-    Do_you_like_open_source_software:new FormControl('',Validators.required),
-    Email:new FormControl('',[
+    Answer_1:new FormControl('',Validators.required),
+    Answer_2:new FormControl('',Validators.required),
+    Answer_3:new FormControl('',Validators.required),
+    Answer_4:new FormControl('',Validators.required),
+    Answer_5:new FormControl('',Validators.required),
+    Answer_6:new FormControl('',[
       Validators.required,
-      Validators.email,
     ]),
-    JavaScript_level:new FormControl('',Validators.required),
-    Java_level:new FormControl('',Validators.required),
-    Name:new FormControl('',Validators.required),
-    Phone_Number:new FormControl('',[Validators.required]),
-    Python_level:new FormControl('',Validators.required),
-    Which_computer_language_are_you_prefer:new FormControl('',Validators.required)
+    Answer_7:new FormControl('',Validators.required),
+    Answer_8:new FormControl('',Validators.required),
+    Answer_9:new FormControl('',Validators.required),
+    Answer_10:new FormControl('',[Validators.required]),
+    Answer_11:new FormControl('',Validators.required),
+    Answer_12:new FormControl('',Validators.required)
 
   });
 
@@ -58,7 +57,7 @@ export class AppComponent implements OnInit{
   //onSubmit method, submit questionnaire to server
   onSubmit() {
     if (this.myform.valid){
-      // console.log(this.model);
+      console.log(this.model);
       const req=this.http.post('http://localhost:8000/api/questionnaire/create/',this.model).subscribe(
           res=>{
             console.log(res);

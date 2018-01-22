@@ -8,6 +8,7 @@ from rest_framework.permissions import(
     AllowAny,
     )
 from questionnaire.models import Questionnaire
+from questionnaire.models import Question
 from .serializers import (
     QuestionnaireSerializer,
     QuestionnaireCreateSerializer
@@ -19,7 +20,7 @@ class QuestionnaireCreateAPIView(CreateAPIView):
     permission_classes=[AllowAny]
 
 class QuestionnaireListAPIView(ListAPIView):
-    queryset = Questionnaire.objects.all()
+    queryset = Question.objects.all()
     serializer_class=QuestionnaireSerializer
     permission_classes=[AllowAny]
 
